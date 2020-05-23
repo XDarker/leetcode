@@ -8,7 +8,7 @@ import java.util.HashMap;
  * @Description TODO
  * @Date 2020/5/13 23:09
  */
-public class T001_twoSum {
+public class T0001_twoSum {
 
     public static void main(String[] args) {
 
