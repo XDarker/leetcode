@@ -1,4 +1,4 @@
-package leetcode;
+package Algorithm;
 
 import java.util.Stack;
 
@@ -7,13 +7,13 @@ import java.util.Stack;
  * @Description 设计一个有getMin功能的栈
  * @Date 2020/8/3 23:04
  */
-public class MinStack {
+public class T0001_getMinStack {
 
 
     private Stack<Integer> stackData;
     private Stack<Integer> stackMin;
 
-    public MinStack() {
+    public T0001_getMinStack() {
         this.stackData = new Stack<>();
         this.stackMin = new Stack<>();
     }
