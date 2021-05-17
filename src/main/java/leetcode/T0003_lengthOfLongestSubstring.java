@@ -60,13 +60,14 @@ public class T0003_lengthOfLongestSubstring {
         int[] hash = new int[256];
         int begin = 0;
         int end = 0;
-        int repeat = 0, res = 0;
+        int repeat = 0;
+        int res = 0;
 
         while (end < s.length()) {
             if (hash[s.charAt(end)] > 0) {
                 //遇到一个重复的字符
                 repeat++;
-            }else {
+            } else {
                 //如果没有重复的将其加入
                 hash[s.charAt(end)]++;
                 end++;
@@ -95,24 +96,23 @@ public class T0003_lengthOfLongestSubstring {
      */
     public static int lengthOfLongestSubstring3(String s) {
 
-        if (s == null || s.length() == 0) {
+        if (s == null) {
             return 0;
         }
         if (s.length() == 1) {
             return s.length();
         }
-        int res = 0;
-        int begin = 0;
         HashMap<Character, Integer> map = new HashMap<>();
+        int max = 0;
+        int left = 0;
         for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i))) {
-                begin = Math.max(begin, map.get(s.charAt(i)) + 1);
+                left = Math.max(left, map.get(s.charAt(i)) + 1);
             }
             map.put(s.charAt(i), i);
-            res = Math.max(res, i - begin + 1);
+            max = Math.max(max, i - left + 1);
         }
-
-        return res;
+        return max;
     }
 
     public static int lengthOfLongestSubstring4(String s) {
